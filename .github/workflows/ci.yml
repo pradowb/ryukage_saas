@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm test
+      - run: npm run build
+
+  # Corre as migrações e o seed contra um Postgres real (o PGlite dos testes não cobre tudo,
+  # p. ex. concorrência entre ligações).
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: ryukage
+          POSTGRES_PASSWORD: ryukage
+          POSTGRES_DB: ryukage
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U ryukage" --health-interval 5s --health-timeout 3s --health-retries 10
+    env:
+      DATABASE_URL: postgres://ryukage:ryukage@localhost:5432/ryukage
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run db:migrate
+      - run: npm run db:seed
+      - name: Migrações são idempotentes
+        run: npm run db:migrate

@@ -1,0 +1,36 @@
+# Ambiente completo local: `docker compose up --build`
+# Depois, uma vez: `docker compose exec app node dist/server/db/seed.js`
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ryukage
+      POSTGRES_PASSWORD: ryukage
+      POSTGRES_DB: ryukage
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ryukage"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://ryukage:ryukage@db:5432/ryukage
+      PORT: 3847
+      # Local é HTTP; em produção (HTTPS) remova esta linha.
+      COOKIE_SECURE: "false"
+      SEED_ADMIN_PASSWORD: ${SEED_ADMIN_PASSWORD:-troque-esta-senha}
+      SEED_EQUIPE_PASSWORD: ${SEED_EQUIPE_PASSWORD:-troque-esta-senha-tambem}
+    ports:
+      - "3847:3847"
+
+volumes:
+  pgdata:

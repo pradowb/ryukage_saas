@@ -1,0 +1,196 @@
+{
+  "pedidos": [
+    {
+      "id": 192,
+      "itens": [
+        {
+          "nome": "Calabresa",
+          "qtd": 2,
+          "preco": 9
+        }
+      ],
+      "valor_total": 24.5,
+      "endereco": "Rua de Cedofeita, 118",
+      "tipo_entrega": "entrega",
+      "status": "confirmado"
+    },
+    {
+      "id": 193,
+      "itens": [
+        {
+          "nome": "Quatro Queijos",
+          "qtd": 1,
+          "preco": 13.5
+        },
+        {
+          "nome": "Coca-Cola 33cl",
+          "qtd": 2,
+          "preco": 2
+        }
+      ],
+      "valor_total": 17.5,
+      "endereco": "",
+      "tipo_entrega": "retirada",
+      "status": "confirmado"
+    },
+    {
+      "id": 194,
+      "itens": [
+        {
+          "nome": "Pepperoni",
+          "qtd": 1,
+          "preco": 11.5
+        },
+        {
+          "nome": "Borda recheada",
+          "qtd": 1,
+          "preco": 2.5
+        }
+      ],
+      "valor_total": 16,
+      "endereco": "Av. da Boavista, 902",
+      "tipo_entrega": "entrega",
+      "status": "em_preparo"
+    },
+    {
+      "id": 190,
+      "itens": [
+        {
+          "nome": "Frango c/ Catupiry",
+          "qtd": 1,
+          "preco": 12.5
+        },
+        {
+          "nome": "Borda de Catupiry",
+          "qtd": 1,
+          "preco": 2.5
+        }
+      ],
+      "valor_total": 15,
+      "endereco": "Rua das Flores, 42",
+      "tipo_entrega": "entrega",
+      "status": "em_preparo"
+    },
+    {
+      "id": 188,
+      "itens": [
+        {
+          "nome": "Carne Seca",
+          "qtd": 1,
+          "preco": 14
+        }
+      ],
+      "valor_total": 16.5,
+      "endereco": "Rua do Almada, 9",
+      "tipo_entrega": "entrega",
+      "status": "em_preparo"
+    },
+    {
+      "id": 185,
+      "itens": [
+        {
+          "nome": "Calabresa",
+          "qtd": 1,
+          "preco": 9
+        },
+        {
+          "nome": "Água 50cl",
+          "qtd": 1,
+          "preco": 1.5
+        }
+      ],
+      "valor_total": 10.5,
+      "endereco": "Praça dos Poveiros, 7",
+      "tipo_entrega": "entrega",
+      "status": "pronto"
+    },
+    {
+      "id": 181,
+      "itens": [
+        {
+          "nome": "Margherita",
+          "qtd": 2,
+          "preco": 8.5
+        }
+      ],
+      "valor_total": 17,
+      "endereco": "",
+      "tipo_entrega": "retirada",
+      "status": "entregue"
+    }
+  ],
+  "itens_cardapio": [
+    {
+      "id": 1,
+      "nome": "Calabresa",
+      "descricao": "Molho, mussarela, calabresa, cebola, orégãos",
+      "preco": 9,
+      "categoria": "Pizzas",
+      "disponivel": true
+    },
+    {
+      "id": 2,
+      "nome": "Frango c/ Catupiry",
+      "descricao": "Frango desfiado, catupiry, milho",
+      "preco": 12.5,
+      "categoria": "Pizzas",
+      "disponivel": true
+    },
+    {
+      "id": 3,
+      "nome": "Margherita",
+      "descricao": "Molho, mussarela, manjericão fresco",
+      "preco": 8.5,
+      "categoria": "Pizzas",
+      "disponivel": true
+    },
+    {
+      "id": 4,
+      "nome": "Quatro Queijos",
+      "descricao": "Mussarela, provolone, parmesão, gorgonzola",
+      "preco": 13.5,
+      "categoria": "Pizzas",
+      "disponivel": true
+    },
+    {
+      "id": 5,
+      "nome": "Carne Seca",
+      "descricao": "Carne seca, cebola roxa, catupiry",
+      "preco": 14,
+      "categoria": "Pizzas",
+      "disponivel": true
+    },
+    {
+      "id": 6,
+      "nome": "Coca-Cola 33cl",
+      "descricao": "Lata",
+      "preco": 2,
+      "categoria": "Bebidas",
+      "disponivel": true
+    },
+    {
+      "id": 7,
+      "nome": "Água 50cl",
+      "descricao": "Sem gás",
+      "preco": 1.5,
+      "categoria": "Bebidas",
+      "disponivel": true
+    },
+    {
+      "id": 8,
+      "nome": "Borda de Catupiry",
+      "descricao": "Extra na pizza",
+      "preco": 2.5,
+      "categoria": "Extras",
+      "disponivel": true
+    },
+    {
+      "id": 9,
+      "nome": "Pepperoni",
+      "descricao": "Molho, mussarela, pepperoni",
+      "preco": 11.5,
+      "categoria": "Pizzas",
+      "disponivel": true
+    }
+  ]
+}

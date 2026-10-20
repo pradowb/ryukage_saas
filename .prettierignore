@@ -1,0 +1,6 @@
+dist/
+coverage/
+data/
+drizzle/
+package-lock.json
+instrucoes-implementar-ryukage-pulse.md
